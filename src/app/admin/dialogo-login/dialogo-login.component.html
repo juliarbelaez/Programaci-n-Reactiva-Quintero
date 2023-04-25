@@ -1,0 +1,51 @@
+<div class="mb-3">
+  <p class="login">Ingrese sus datos</p>
+</div>
+<div class="form">
+  <form [formGroup]="authForm" (ngSubmit)="login()">
+    <div>
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input [formControl]="nombreControl" placeholder="Nombre" matInput />
+        <mat-error>Campo requerido</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Apellido</mat-label>
+        <input
+          [formControl]="apellidoControl"
+          placeholder="Apellido"
+          matInput
+        />
+        <mat-error>Campo requerido</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input [formControl]="emailControl" placeholder="email" matInput />
+        <mat-error>Campo requerido</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Contraseña</mat-label>
+        <input
+          [formControl]="passwordControl"
+          placeholder="Contraseña"
+          matInput
+        />
+        <mat-error>Campo requerido</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <div>
+        <button mat-flat-button color="primary" type="submit">Ingresar</button>
+      </div>
+      <div>
+        <button mat-flat-button color="warn" type="submit">Cancelar</button>
+      </div>
+    </div>
+  </form>
+</div>

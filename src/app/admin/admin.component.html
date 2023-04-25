@@ -1,0 +1,61 @@
+<mat-toolbar color="primary">
+  <button
+    (click)="drawer.toggle()"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Centro de idiomas</span>
+  <span class="example-spacer"></span>
+  <p *ngIf="mostrarTexto">Hola {{ authUser?.nombre }}</p>
+  <button mat-raised-button (click)="openDialog()">
+    Ingresar
+    <mat-icon>account_circle</mat-icon>
+  </button></mat-toolbar
+>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Bienvenida</p>
+    <ul>
+      <img width="50" height="50" src="../../assets/login.png" />
+      <p>{{ authUser?.email }}</p>
+      <ul>
+        <button mat-raised-button color="warn">Cerrar sesión</button>
+      </ul>
+    </ul>
+    <ul>
+      <button
+        (click)="showFiller = !showFiller"
+        mat-raised-button
+        color="accent"
+      >
+        Inscribir estudiantes
+      </button>
+    </ul>
+    <ul>
+      <button
+        (click)="showFiller = !showFiller"
+        mat-raised-button
+        color="accent"
+      >
+        Inscribir profesores
+      </button>
+    </ul>
+    <ul>
+      <button
+        (click)="showFiller = !showFiller"
+        mat-raised-button
+        color="accent"
+      >
+        Inscribir cursos
+      </button>
+    </ul>
+  </mat-drawer>
+
+  <main class="main">
+    <app-listaestudiantes></app-listaestudiantes>
+  </main>
+</mat-drawer-container>

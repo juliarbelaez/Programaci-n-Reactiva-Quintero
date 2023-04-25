@@ -1,0 +1,21 @@
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre completo</th>
+      <th>Curso</th>
+      <th>Email</th>
+      <th>Fecha de registro</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let estudiante of estudiantes$ | async">
+      <td class="table-light">{{ estudiante.id }}</td>
+      <td class="table-light">{{ estudiante.nombre }}</td>
+      <td class="table-light">{{ estudiante.apellido }}</td>
+      <td class="table-light">{{ estudiante.curso }}</td>
+      <td class="table-light">{{ estudiante.email }}</td>
+      <td class="table-light">{{ estudiante.fecharegistro | date }}</td>
+    </tr>
+  </tbody>
+</table>
